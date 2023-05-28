@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 49b1afa8115e94c48ad3df4308fb7d1e
+guid: d880faf4e012c9348b1d2f6210b49669
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,190 +128,232 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PlayableCharacterSprites_0
+      name: ParticlePlus
       rect:
         serializedVersion: 2
         x: 0
+        y: 10
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f4ff5d153d5b745b1e8ff5852d87c2
+      internalID: -2062946328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleX
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 10
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dcae13c1bd529b4b8981e565e82357e
+      internalID: 896315991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleCircleSmall
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 10
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4ea8ba8c85f384bb0a98ff98f7b78c
+      internalID: 2130014629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ParticleCircleLarge
+      rect:
+        serializedVersion: 2
+        x: 12
         y: 9
-        width: 24
-        height: 45
+        width: 4
+        height: 4
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3abb8ca462acc8d44a023665ed53196f
-      internalID: 302326763
+      spriteID: 3b6c1467305b1004896bccb752a33274
+      internalID: -611293623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayableCharacterSprites_1
+      name: ParticleHalfCircle
       rect:
         serializedVersion: 2
-        x: 25
-        y: 40
-        width: 29
-        height: 14
+        x: 17
+        y: 10
+        width: 3
+        height: 3
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3b894ce75efc7540a98143bf87acb5c
-      internalID: 1150900561
+      spriteID: a4630f2bad97ff24ba4ee69ebf749681
+      internalID: 1417989644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayableCharacterSprites_2
+      name: ParticleSquare
       rect:
         serializedVersion: 2
-        x: 59
-        y: 9
-        width: 24
-        height: 45
+        x: 21
+        y: 11
+        width: 2
+        height: 2
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b137ead79c23eb44beaa69e74655cbf
-      internalID: 1909513941
+      spriteID: b81ef3e0245c68e479a08969f6f448e8
+      internalID: -679031799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayableCharacterSprites_3
+      name: Cloud1
       rect:
         serializedVersion: 2
-        x: 84
+        x: 0
         y: 0
-        width: 25
-        height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26cdb98363faff04b9e8e76db0f2b4cd
-      internalID: 1535303056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayableCharacterSprites_4
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 25
-        width: 29
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 597c1e8d6abf789489683c7eedcefaf1
-      internalID: -375594391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayableCharacterSprites_5
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 15
-        width: 23
+        width: 6
         height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bc8592446423b14fa0c7168914990b9
-      internalID: 1556391203
+      spriteID: 978b1791f7ed6a44cac6cf61073bbaa9
+      internalID: 1899471574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayableCharacterSprites_6
+      name: Cloud2
       rect:
         serializedVersion: 2
-        x: 50
-        y: 10
-        width: 7
-        height: 7
+        x: 7
+        y: 0
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ab13ed198a97be4a96d4ec594b804d3
-      internalID: -333764637
+      spriteID: 1a9393924e2e8bb429923a808f99f1fb
+      internalID: 1240227587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayableCharacterSprites_7
+      name: Cloud3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
-        width: 25
-        height: 7
+        x: 14
+        y: 0
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0be6621d5b56057469e7027a33242c7d
-      internalID: -55516136
+      spriteID: 1f543746ba47efe45a8c80906821e2d3
+      internalID: 1423021945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayableCharacterSprites_8
+      name: Cloud4
       rect:
         serializedVersion: 2
-        x: 26
-        y: 1
-        width: 21
-        height: 10
+        x: 21
+        y: 0
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bf8baf246963f04cb96e1ba31d252d9
-      internalID: -467699643
+      spriteID: daa234ab71b96a04dbbc04d06b2b8fa4
+      internalID: 1094287625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud5
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614ffca5d3f9c7c4aae61723aed2744e
+      internalID: 1485155683
       vertices: []
       indices: 
       edges: []
@@ -327,15 +369,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PlayableCharacterSprites_7: -55516136
-      PlayableCharacterSprites_8: -467699643
-      PlayableCharacterSprites_1: 1150900561
-      PlayableCharacterSprites_6: -333764637
-      PlayableCharacterSprites_2: 1909513941
-      PlayableCharacterSprites_3: 1535303056
-      PlayableCharacterSprites_0: 302326763
-      PlayableCharacterSprites_4: -375594391
-      PlayableCharacterSprites_5: 1556391203
+      ParticleX: 896315991
+      ParticleCircleLarge: -611293623
+      ParticleCircleSmall: 2130014629
+      Cloud2: 1240227587
+      Cloud5: 1485155683
+      ParticleSquare: -679031799
+      ParticlePlus: -2062946328
+      ParticleHalfCircle: 1417989644
+      Cloud1: 1899471574
+      Cloud4: 1094287625
+      Cloud3: 1423021945
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

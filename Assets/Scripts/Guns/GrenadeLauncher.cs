@@ -110,14 +110,14 @@ public class GrenadeLauncher : MonoBehaviour
             if (!barrelFlipped)
             {   
                 barrelFlipped = true;
-                gunBarrel.transform.localPosition = new Vector3 (0.15f, -0.045f, 0f);
+                gunBarrel.transform.localPosition = new Vector3 (1.5f, -0.225f, 0f);
             }
         } else {
             this.GetComponent<SpriteRenderer>().flipY = false;
             if (barrelFlipped)
             {
                 barrelFlipped = false;
-                gunBarrel.transform.localPosition = new Vector3 (0.15f, 0.045f, 0f);
+                gunBarrel.transform.localPosition = new Vector3 (1.5f, 0.225f, 0f);
             }
         }
     }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1049dc5fa032e446b57ef08a033bb76
+guid: 380e826ca52f87e42ad7078755c4857a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,13 +128,202 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tempruler 1_0
+      name: Minigun1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 290
+        width: 320
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811287bb0b6dbdc44bfabd3738410f22
+      internalID: 1337866031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Minigun2
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 290
+        width: 320
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1ced2369d4aec4db6a2f6e873bb5dc
+      internalID: 144154098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pistol
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 205
+        width: 160
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e6ca77a3e6c3f44bd48fd12479c418
+      internalID: 65513003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Flintlock
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 215
+        width: 215
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c4a1441fb269b4cb88afd89a605bdf
+      internalID: -1045878639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SMG
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 165
+        width: 200
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28a9d5b4034a0e49a15e7e78f3f4f72
+      internalID: 1763131702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shotgun
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 140
+        width: 240
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6af909a4694e784d828b34a74ed62ab
+      internalID: 1254587894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scissors
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 115
+        width: 145
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b0b824c05712c49ae90e5fd9387ea5
+      internalID: 813252352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SawedOffShotgun
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 160
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45489f61e5e93846af7b3a7a9ccd1cc
+      internalID: 733398070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GrenadeLauncher
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 45
+        width: 300
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff866bc678bfdfb4ead3f78ccd7d301e
+      internalID: 608680862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sniper
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 21
-        height: 135
+        width: 320
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,134 +331,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb1403b3c56841f4b869cc6b8a032eaa
-      internalID: -1075628169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tempruler 1_1
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 0
-        width: 21
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8a8a55e5dae0774c90345c58b339572
-      internalID: 1077955598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tempruler 1_2
-      rect:
-        serializedVersion: 2
-        x: 44
-        y: 0
-        width: 21
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd1eaa74c84412242affb40120bb5e8d
-      internalID: 549624659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tempruler 1_3
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 0
-        width: 21
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b43ea4832471bd7469e150a4831126e8
-      internalID: 1508921099
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tempruler 1_4
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 0
-        width: 21
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d8dfaa6787d0284cb100d4f950a0508
-      internalID: 1251926297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tempruler 1_5
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 0
-        width: 21
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34f61dc5f4a74c94ab5d6bd3c3cece17
-      internalID: -1417029962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tempruler 1_6
-      rect:
-        serializedVersion: 2
-        x: 132
-        y: 0
-        width: 21
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f9fe9c72ade7224995a9c40ff5f18e4
-      internalID: 775949328
+      spriteID: 366c191d680e2d546a1ad5cb565a6afb
+      internalID: -686752054
       vertices: []
       indices: 
       edges: []
@@ -285,13 +348,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      tempruler 1_3: 1508921099
-      tempruler 1_1: 1077955598
-      tempruler 1_5: -1417029962
-      tempruler 1_4: 1251926297
-      tempruler 1_6: 775949328
-      tempruler 1_2: 549624659
-      tempruler 1_0: -1075628169
+      Minigun1: 1337866031
+      Flintlock: -1045878639
+      GrenadeLauncher: 608680862
+      Minigun2: 144154098
+      SawedOffShotgun: 733398070
+      Scissors: 813252352
+      SMG: 1763131702
+      Shotgun: 1254587894
+      Pistol: 65513003
+      Sniper: -686752054
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -81,7 +81,7 @@ public class Scissors : MonoBehaviour
 
     void Shoot()
     {
-        Rigidbody2D newBul = Instantiate(bulletPrefab, gunBarrel.transform.position,   this.transform.rotation * Quaternion.Euler(0f, 0f, -90f)).GetComponent<Rigidbody2D>();
+        Rigidbody2D newBul = Instantiate(bulletPrefab, gunBarrel.transform.position,   this.transform.rotation * Quaternion.Euler(0f, 0f, 0f)).GetComponent<Rigidbody2D>();
 
         newBul.GetComponent<Bullet>().InstantiateStats(6, 5, damage, piercing, true);
 
@@ -111,14 +111,14 @@ public class Scissors : MonoBehaviour
             if (!barrelFlipped)
             {   
                 barrelFlipped = true;
-                gunBarrel.transform.localPosition = new Vector3 (0.15f, -0.045f, 0f);
+                gunBarrel.transform.localPosition = new Vector3 (0.575f, 0f, 0f);
             }
         } else {
             this.GetComponent<SpriteRenderer>().flipY = false;
             if (barrelFlipped)
             {
                 barrelFlipped = false;
-                gunBarrel.transform.localPosition = new Vector3 (0.15f, 0.045f, 0f);
+                gunBarrel.transform.localPosition = new Vector3 (0.575f, 0f, 0f);
             }
         }
     }

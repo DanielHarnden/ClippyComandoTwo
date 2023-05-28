@@ -17,6 +17,7 @@ public class SawedOff : MonoBehaviour
     private int piercing = 2;
     private float spreadFactor = 0.75f;
     private int pelletCount = 4;
+    private float reloadTime = 1f;
     // Max stats
     private int MAXtotalAmmo = 512;
     private int MAXclipSize = 32;
@@ -25,29 +26,37 @@ public class SawedOff : MonoBehaviour
     private int MAXpiercing = 6;
     private float MAXspreadFactor = 0.5f;
     private int MAXpelletCount = 8;
+    private float MAXreloadTime = 0.5f;
     // Constant stats
     private float bulletSpeed = 2000f;
     // Temp stats
     private float shootTimer;
+    private float reloadTimer;
     private bool canShoot = true;
+    private bool reloading = false;
 
-    //[Header ("Audio Visual Effects")]
+    [Header ("Audio Visual Effects")]
     //private Text ammoUI;
-    //private AudioSource thisGun;
-    //private AudioSource emptyClip;
+    public AudioClip emptyClipAudio;
+    public AudioClip shootAudio;
+    public AudioClip reloadAudio;
+
+    private AudioSource thisAudio;
+    private ParticleSystem thisParticles;
 
 
     void Start()
     {
+        thisAudio = this.gameObject.GetComponent<AudioSource>();
+        thisParticles = this.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
         //ammoUI = GameObject.FindGameObjectWithTag("AmmoUI").GetComponent<Text>();
-        //thisGun = this.gameObject.GetComponent<AudioSource>();
-        //emptyClip = this.transform.parent.GetComponent<AudioSource>();
     }
 
     // Not in start because if it was switching while false would softlock the gun.
     void OnEnable() 
     {
         canShoot = true;
+        reloading = false;
         gunBarrel = GameObject.FindGameObjectWithTag("GunTip");
     }
 
@@ -72,17 +81,44 @@ public class SawedOff : MonoBehaviour
             canShoot = true;
         }
 
-        // Reload
+        Reload();
+    }
+
+
+
+    public void Reload()
+    {
         if (Input.GetKeyDown(KeyCode.Mouse1) && clipAmmo < (clipSize / 2))
         {
-            // Doesn't reload if remaining ammo is less than 0.
-            if (totalAmmo - (clipSize - clipAmmo) >= 0)
+            if (!reloading)
             {
-                totalAmmo -= (clipSize - clipAmmo);
-                clipAmmo = clipSize;
+                reloading = true;
+                reloadTimer = reloadTime;
+            }
+        }
+
+        if (reloading)
+        {
+            if (!thisAudio.isPlaying)
+            {
+                thisAudio.clip = reloadAudio;
+                thisAudio.Play();
+            }
+
+            if (reloadTimer > 0f)
+            {
+                reloadTimer -= Time.deltaTime;
             } else {
-                clipAmmo += totalAmmo;
-                totalAmmo = 0;
+                reloading = false;
+                // Doesn't reload if remaining ammo is less than 0.
+                if (totalAmmo - (clipSize - clipAmmo) >= 0)
+                {
+                    totalAmmo -= (clipSize - clipAmmo);
+                    clipAmmo = clipSize;
+                } else {
+                    clipAmmo += totalAmmo;
+                    totalAmmo = 0;
+                }
             }
         }
     }
@@ -95,18 +131,27 @@ public class SawedOff : MonoBehaviour
         {
             if (canShoot)
             {
-                //thisGun.Play();
+                if (reloading)
+                {
+                    reloading = false;
+                }
+
+                thisAudio.clip = shootAudio;
+                thisAudio.Play();
                 canShoot = false;
                 shootTimer = shootCooldown;
                 Shoot();
             }
-        } else {
-            //emptyClip.Play();
+        } else if (!reloading) {
+            thisAudio.clip = emptyClipAudio;
+            thisAudio.Play();
         }
     }
 
     void Shoot()
     {
+        thisParticles.Play();
+
         for (int i = 0; i < pelletCount; i++)
         {
             // Adds a random spread to the gun barrel location
@@ -147,14 +192,14 @@ public class SawedOff : MonoBehaviour
             if (!barrelFlipped)
             {   
                 barrelFlipped = true;
-                gunBarrel.transform.localPosition = new Vector3 (0.15f, -0.045f, 0f);
+                gunBarrel.transform.localPosition = new Vector3 (0.75f, -0.035f, 0f);
             }
         } else {
             this.GetComponent<SpriteRenderer>().flipY = false;
             if (barrelFlipped)
             {
                 barrelFlipped = false;
-                gunBarrel.transform.localPosition = new Vector3 (0.15f, 0.045f, 0f);
+                gunBarrel.transform.localPosition = new Vector3 (0.75f, 0.035f, 0f);
             }
         }
     }
@@ -310,6 +355,25 @@ public class SawedOff : MonoBehaviour
         } 
         else {
             pelletCount += pelltsAdded;
+            return true;
+        }
+    }
+
+    public bool ReduceReload(float reloadReduced)
+    {
+        float tempReloadCooldown = reloadTime - reloadReduced;
+
+        if (reloadTime <= MAXreloadTime)
+        {
+            return false;
+        }
+        else if (tempReloadCooldown <= MAXreloadTime)
+        {
+            reloadTime = MAXreloadTime;
+            return true;
+        } 
+        else {
+            reloadTime -= reloadReduced;
             return true;
         }
     }

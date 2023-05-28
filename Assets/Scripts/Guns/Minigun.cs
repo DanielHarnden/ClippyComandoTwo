@@ -12,10 +12,12 @@ public class Minigun : MonoBehaviour
     private int totalAmmo = 500;
     private int damage = 1;
     private int piercing = 1;
+    private float warmUp = 1f;
     // Max stats
     private int MAXtotalAmmo = 1000;
     private int MAXdamage = 2;
     private int MAXpiercing = 2;
+    private float MAXwarmUp = 0.2f;
     // Constant stats
     private float shootCooldown = 0.05f;
     private float bulletSpeed = 3000f;
@@ -23,18 +25,28 @@ public class Minigun : MonoBehaviour
     private float shootTimer;
     private bool canShoot = true;
     private bool shooting;
+    private bool warmingUp;
+    private bool warmedUp;
+    private float warmUpTimer;
 
-    //[Header ("Audio Visual Effects")]
+    [Header ("Audio Visual Effects")]
     //private Text ammoUI;
-    //private AudioSource thisGun;
-    //private AudioSource emptyClip;
+    public AudioClip emptyClipAudio;
+    public AudioClip shootAudio;
+    public AudioClip reloadAudio;
+
+    public Sprite gunOne;
+    public Sprite gunTwo;
+
+    private AudioSource thisAudio;
+    private ParticleSystem thisParticles;
 
 
     void Start()
     {
+        thisAudio = this.gameObject.GetComponent<AudioSource>();
+        thisParticles = this.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
         //ammoUI = GameObject.FindGameObjectWithTag("AmmoUI").GetComponent<Text>();
-        //thisGun = this.gameObject.GetComponent<AudioSource>();
-        //emptyClip = this.transform.parent.GetComponent<AudioSource>();
     }
 
     // Not in start because if it was switching while false would softlock the gun.
@@ -55,6 +67,10 @@ public class Minigun : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             ShootCheck();
+        } else {
+            warmUpTimer = warmUp;
+            warmedUp = false;
+            shooting = false;
         }
 
         // Shoot cooldown timer
@@ -65,41 +81,68 @@ public class Minigun : MonoBehaviour
             canShoot = true;
         }
 
-        /*if (shooting)
+        if (shooting)
         {
-            if (!thisGun.isPlaying)
+            if (GetComponent<SpriteRenderer>().sprite == gunOne)
             {
-                thisGun.Play();
+                GetComponent<SpriteRenderer>().sprite = gunTwo;
+            } else {
+                GetComponent<SpriteRenderer>().sprite = gunOne;
             }
+
+            /*if (!thisAudio.isPlaying)
+            {
+                thisAudio.Play();
+            }*/
         } else {
-            thisGun.Stop();
-        }*/
+            thisAudio.Stop();
+        }
     }
 
 
 
     public void ShootCheck()
     {
-        if (totalAmmo > 0)
+        if (!warmedUp)
         {
-            if (canShoot)
+            if (warmUpTimer > 0)
             {
-                shooting = true;
-                canShoot = false;
-                shootTimer = 0.05f;
-                Shoot();
+                if (GetComponent<SpriteRenderer>().sprite == gunOne)
+                {
+                    GetComponent<SpriteRenderer>().sprite = gunTwo;
+                } else {
+                    GetComponent<SpriteRenderer>().sprite = gunOne;
+                }
+
+                warmUpTimer -= Time.deltaTime;
+            } else {
+                warmedUp = true;
             }
         } else {
-            shooting = false;
-            //if (!emptyClip.isPlaying)
-           // {
-                //emptyClip.Play();
-            //}
+            if (totalAmmo > 0)
+            {
+                if (canShoot)
+                {
+                    thisAudio.clip = shootAudio;
+                    thisAudio.Play();
+
+                    shooting = true;
+                    canShoot = false;
+                    shootTimer = 0.05f;
+                    Shoot();
+                }
+            } else {
+                shooting = false;
+                thisAudio.clip = emptyClipAudio;
+                thisAudio.Play();
+            }
         }
     }
 
     void Shoot()
     {
+        thisParticles.Play();
+
         Vector3 spreadPos = gunBarrel.transform.right;
         spreadPos.x += Random.Range(-0.1f, 0.1f);
         spreadPos.y += Random.Range(-0.1f, 0.1f);
@@ -135,14 +178,14 @@ public class Minigun : MonoBehaviour
             if (!barrelFlipped)
             {   
                 barrelFlipped = true;
-                gunBarrel.transform.localPosition = new Vector3 (0.15f, -0.045f, 0f);
+                gunBarrel.transform.localPosition = new Vector3 (1.55f, 0.025f, 0f);
             }
         } else {
             this.GetComponent<SpriteRenderer>().flipY = false;
             if (barrelFlipped)
             {
                 barrelFlipped = false;
-                gunBarrel.transform.localPosition = new Vector3 (0.15f, 0.045f, 0f);
+                gunBarrel.transform.localPosition = new Vector3 (1.55f, -0.025f, 0f);
             }
         }
     }

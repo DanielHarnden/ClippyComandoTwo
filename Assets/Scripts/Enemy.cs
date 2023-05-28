@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case 1:
-                this.gameObject.GetComponent<RulerAI>().UpdateStats(health, damage, moveSpeed, idleTime, chargePrepTime, chargeTime, sharpness);
+                this.gameObject.GetComponent<RulerAI>().UpdateStats(moveSpeed, idleTime, chargePrepTime, chargeTime, sharpness);
                 break;
 
             default:
@@ -120,12 +120,15 @@ public class Enemy : MonoBehaviour
         playerSeen = true;
         health -= damageInflicted;
 
-        if (enemyType == 1)
+        switch(enemyType)
         {
-            if (Random.Range(0, 255) == 69)
-            {
-                this.gameObject.GetComponent<RulerAI>().Enrage();
-            }
+            case 1:
+                this.gameObject.GetComponent<RulerAI>().Damage();
+                break;
+
+            default:
+                Debug.Log("Enemy type invalid.");
+                break;
         }
     }
 
@@ -136,7 +139,8 @@ public class Enemy : MonoBehaviour
     // TODO: Fix this up
     void KillEnemy()
     {
-        if (!dead)
+        Destroy(this.gameObject);
+        /*if (!dead)
         {
             dead = true;
             gameObject.tag = "Untagged";
@@ -158,12 +162,12 @@ public class Enemy : MonoBehaviour
             /*for (int i = 0; i < bits.Length; i++)
             {
                 Instantiate(bits[i], this.transform.position + new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(-1.0f, 1.0f), 0f), this.transform.rotation);
-            }*/
+            }
         } else {
             /*if (!rulerAudio.isPlaying && !rulerParticles.isPlaying)
             {
                 Destroy(this.gameObject);
-            }*/
-        }
+            }
+        }*/
     }
 }
